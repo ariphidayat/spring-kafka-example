@@ -2,7 +2,7 @@
          version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-    <display-name>Spring MVC - MyBatis</display-name>
+    <display-name>Service Three</display-name>
 
     <servlet>
         <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
