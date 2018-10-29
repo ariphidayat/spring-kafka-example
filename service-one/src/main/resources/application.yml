@@ -11,4 +11,4 @@ spring:
     consumer:
       group-id: boot
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties.spring.json.trusted.packages: id.arip.
+      properties.spring.json.trusted.packages: id.arip.one
