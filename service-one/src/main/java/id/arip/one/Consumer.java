@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 public class Consumer {
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics = "spring")
-    public void subscribe(String message) {
+    @KafkaListener(topics = TopicConst.TOPIC_TEST)
+    public void listen(String message) {
         log.info("Received a message: {}", message);
     }
 }

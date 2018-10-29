@@ -13,13 +13,11 @@ import org.springframework.stereotype.Component;
 public class Producer {
     private static final Logger log = LoggerFactory.getLogger(Producer.class);
 
-    private String topic = "spring";
-
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate kafkaTemplate;
 
     public void send(String message) {
-        log.info("Send message: {} to topic: {}", message, topic);
-        kafkaTemplate.send(topic, message);
+        kafkaTemplate.send(TopicConst.TOPIC_TEST, message);
+        log.info("#{} : {}", TopicConst.TOPIC_TEST, message);
     }
 }
