@@ -13,7 +13,7 @@ public class Consumer {
     private static final Logger log = LoggerFactory.getLogger(Consumer.class);
 
     @KafkaListener(topics = TopicConst.TOPIC_TEST)
-    public void listen(String message) {
-        log.info("Received a message: {}", message);
+    public void listen(TestObj obj) {
+        log.info("Received a message: {}", obj.toString());
     }
 }

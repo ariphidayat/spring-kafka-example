@@ -16,8 +16,8 @@ public class Producer {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
-    public void send(String message) {
-        kafkaTemplate.send(TopicConst.TOPIC_TEST, message);
-        log.info("#{} : {}", TopicConst.TOPIC_TEST, message);
+    public void send(TestObj obj) {
+        kafkaTemplate.send(TopicConst.TOPIC_TEST, obj);
+        log.info("#{} : {}", TopicConst.TOPIC_TEST, obj.toString());
     }
 }
