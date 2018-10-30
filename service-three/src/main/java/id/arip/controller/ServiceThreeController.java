@@ -23,18 +23,13 @@ public class ServiceThreeController {
     private KafkaTemplate kafkaTemplate;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String welcome() {
-        return "Welcome to Service Three!";
-    }
-
-    @RequestMapping(value = "/{message}", method = RequestMethod.GET)
-    public String sendMessage(@PathVariable("message") String message){
-        kafkaTemplate.send(TOPIC, message);
-        return "You just send a message: " + message;
+    public String sendMessage(Person person){
+        kafkaTemplate.send(TOPIC, person);
+        return "You just send a message: " + person.toString();
     }
 
     @KafkaListener(topics = TOPIC)
-    public void subscribe(String message) {
-        log.info("Received a message: {}", message);
+    public void subscribe(Person person) {
+        log.info("Received a message: {}", person.toString());
     }
 }
